@@ -1666,10 +1666,12 @@ static lv_obj_t * build_music_controls_screen(void) {
     items[0] = (pill_list_item_t){ "Play/Pause Button", PILL_ACCESSORY_CHEVRON, false, play_pause_button_mode_settings_row_cb, NULL, NULL };
     items[1] = (pill_list_item_t){ "Car Mode", PILL_ACCESSORY_TOGGLE,
                                     current_settings.car_mode_enabled, NULL, car_mode_switch_event_cb, NULL };
-    items[2] = (pill_list_item_t){ "Lyrics", PILL_ACCESSORY_TOGGLE,
+    items[2] = (pill_list_item_t){ "In-line Remote", PILL_ACCESSORY_TOGGLE,
+                                    current_settings.inline_remote_enabled, NULL, inline_remote_switch_event_cb, NULL };
+    items[3] = (pill_list_item_t){ "Lyrics", PILL_ACCESSORY_TOGGLE,
                                     current_settings.lyrics_enabled, NULL, lyrics_switch_event_cb, NULL };
 
-    int count = 3;
+    int count = 4;
     int plugin_count = plugin_manager_get_music_controls_list_item_count();
     for (int i = 0; i < plugin_count && i < PLUGIN_MAX_MUSIC_CONTROLS_LIST_ITEMS; i++) {
         pill_list_item_t item = {
