@@ -425,7 +425,7 @@ static lv_obj_t * build_about_screen(void) {
         (pill_list_item_t){ "Firmware Update", PILL_ACCESSORY_CHEVRON, false, firmware_update_row_cb, NULL, NULL };
     items[3] =
         (pill_list_item_t){ "Developer Options", PILL_ACCESSORY_CHEVRON, false, dev_options_row_cb, NULL, NULL };
-    lv_obj_t * scr = build_pill_list_screen("About", generic_back_cb, items, 4, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("About", generic_back_cb, items, 4, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -445,7 +445,7 @@ static lv_obj_t * build_dev_options_screen(void) {
     static pill_list_item_t items[1];
     items[0] = (pill_list_item_t){ "Enable database logging", PILL_ACCESSORY_TOGGLE,
                                     current_settings.db_logging_enabled, NULL, db_logging_switch_event_cb, NULL };
-    lv_obj_t * scr = build_pill_list_screen("Developer Options", generic_back_cb, items, 1, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Developer Options", generic_back_cb, items, 1, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1557,7 +1557,7 @@ static lv_obj_t * build_timezone_region_screen(void) {
         items[i] = (pill_list_item_t){ TIMEZONE_REGIONS[i], PILL_ACCESSORY_CHEVRON, false, timezone_region_row_cb, NULL,
                                         (void *) (intptr_t) i };
     }
-    lv_obj_t * scr = build_pill_list_screen("Time Zone", generic_back_cb, items, (int) TIMEZONE_REGION_COUNT, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Time Zone", generic_back_cb, items, (int) TIMEZONE_REGION_COUNT, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1633,7 +1633,7 @@ static lv_obj_t * build_music_playback_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Playback", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Playback", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1656,7 +1656,7 @@ static lv_obj_t * build_music_audio_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Audio", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Audio", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1684,7 +1684,7 @@ static lv_obj_t * build_music_controls_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Controls & Interface", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Controls & Interface", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1706,7 +1706,7 @@ static lv_obj_t * build_music_timers_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Timers", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Timers", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1728,7 +1728,7 @@ static lv_obj_t * build_music_library_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Library", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Library", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1762,7 +1762,7 @@ static lv_obj_t * build_music_settings_screen(void) {
     items[3] = (pill_list_item_t){ "Timers", PILL_ACCESSORY_CHEVRON, false, music_category_timers_cb, NULL, NULL };
     items[4] = (pill_list_item_t){ "Library", PILL_ACCESSORY_CHEVRON, false, music_category_library_cb, NULL, NULL };
 
-    lv_obj_t * scr = build_pill_list_screen("Music Settings", generic_back_cb, items, 5, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Music Settings", generic_back_cb, items, 5, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1805,7 +1805,7 @@ static lv_obj_t * build_settings_display_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Display", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Display", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1844,7 +1844,7 @@ static lv_obj_t * build_settings_power_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Power", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Power", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -1947,7 +1947,7 @@ static lv_obj_t * build_clock_screen(void) {
           .on_click = timezone_settings_row_cb, .out_row = &clock_timezone_row },
     };
     lv_obj_t * scr = build_pill_list_screen("Clock", generic_back_cb, items, 4,
-gui_theme_accent_style(), GUI_ROW_GAP);
+gui_theme_accent_style(), GUI_ROW_GAP, 100);
     if (clock_timezone_row) {
         lv_obj_t * title = lv_obj_get_child(clock_timezone_row, 0);
         if (title) lv_obj_align(title, LV_ALIGN_LEFT_MID, 24, -18);
@@ -2034,7 +2034,7 @@ static lv_obj_t * build_settings_system_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("System", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("System", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -2097,7 +2097,7 @@ static lv_obj_t * build_settings_screen(void) {
         items[count++] = item;
     }
 
-    lv_obj_t * scr = build_pill_list_screen("Settings", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("Settings", generic_back_cb, items, count, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -2154,7 +2154,7 @@ lv_obj_t * build_dac_home_screen(void) {
     static pill_list_item_t items[2];
     items[0] = (pill_list_item_t){ "USB DAC", PILL_ACCESSORY_CHEVRON, false, dac_home_usb_row_cb, NULL, NULL };
     items[1] = (pill_list_item_t){ "Bluetooth DAC", PILL_ACCESSORY_CHEVRON, false, bt_dac_settings_row_cb, NULL, NULL };
-    lv_obj_t * scr = build_pill_list_screen("DAC", generic_back_cb, items, 2, gui_theme_accent_style(), GUI_ROW_GAP);
+    lv_obj_t * scr = build_pill_list_screen("DAC", generic_back_cb, items, 2, gui_theme_accent_style(), GUI_ROW_GAP, 100);
     finalize_screen_navigation(scr);
     return scr;
 }
@@ -2331,7 +2331,7 @@ lv_obj_t * build_home_screen(void) {
             };
         }
         lv_obj_t * scr = build_pill_list_screen(NULL, NULL, items, count, gui_theme_accent_style(),
-                                                 home_layout_config.row_gap > 0 ? home_layout_config.row_gap : 6);
+                                                 home_layout_config.row_gap > 0 ? home_layout_config.row_gap : 6, 100);
         apply_home_background_image(scr);
         finalize_screen_navigation(scr);
         return scr;
